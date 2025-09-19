@@ -398,7 +398,66 @@
                 flex-direction: column;
             }
         }
-    </style>
+    
+        
+        /* Improved styling for picks aller spieler */
+        #all-picks {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+        }
+        
+        .picks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .user-picks-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .user-picks-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .pick-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pick-item:last-child {
+            border-bottom: none;
+        }
+        
+        .pick-status {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .pick-correct {
+            color: #27ae60;
+        }
+        
+        .pick-incorrect {
+            color: #e74c3c;
+        }
+        </style>
 </head>
 <body>
     <div class="header">
@@ -510,25 +569,31 @@
                 
                 <h3><strong>Wöchentliche Picks:</strong></h3>
                 <p>Wähle jede Woche ein Team, welches deiner Meinung nach gewinnt. 🧐</p>
+                <br>
                 
                 <h3><strong>Punkte:</strong></h3>
                 <p>Für jeden richtigen Pick erhältst du 1 Punkt. 🤑<br>
                 (Falsche Picks oder Unentschieden bringen keine Punkte) ☠️</p>
+                <br>
                 
                 <h3><strong>Team-Limits:</strong> 🧠</h3>
                 <ul>
                     <li>Jedes Team kann maximal 2x pro Saison als Gewinner ausgewählt werden.</li>
                     <li>Jedes Team kann maximal 1x pro Saison als Verlierer ausgewählt werden.</li>
                 </ul>
+                <br>
                 
                 <h3><strong>Deadline:</strong> ⚠️</h3>
                 <p>Picks müssen vor jeweiligem Spielbeginn abgegeben werden.</p>
+                <br>
                 
                 <h3><strong>Saison:</strong> 🏁</h3>
                 <p>Die Saison läuft über 18 Wochen der NFL Regular Season.</p>
+                <br>
                 
                 <h3><strong>Gewinner:</strong> 🥇</h3>
                 <p>Der Spieler mit den meisten Punkten am Ende der Saison gewinnt.</p>
+                <br>
                 
                 <h3><strong>Preis:</strong> 🍺</h3>
                 <p>Aller Verlierer lassen eine Kiste Bier springen. 🍺🍺</p>
