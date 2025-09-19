@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nfl-pickem-2025-v2
+    name: nfl-pickem-2025
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
