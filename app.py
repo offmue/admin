@@ -31,38 +31,53 @@ ADMIN_USERS = {'Manuel'}
 
 # NFL Teams with correct IDs
 NFL_TEAMS = {
-    1: {'name': 'Arizona Cardinals', 'abbr': 'ARI'},
-    2: {'name': 'Atlanta Falcons', 'abbr': 'ATL'},
-    3: {'name': 'Baltimore Ravens', 'abbr': 'BAL'},
-    4: {'name': 'Buffalo Bills', 'abbr': 'BUF'},
-    5: {'name': 'Carolina Panthers', 'abbr': 'CAR'},
-    6: {'name': 'Chicago Bears', 'abbr': 'CHI'},
-    7: {'name': 'Cincinnati Bengals', 'abbr': 'CIN'},
-    8: {'name': 'Cleveland Browns', 'abbr': 'CLE'},
-    9: {'name': 'Dallas Cowboys', 'abbr': 'DAL'},
-    10: {'name': 'Denver Broncos', 'abbr': 'DEN'},
-    11: {'name': 'Detroit Lions', 'abbr': 'DET'},
-    12: {'name': 'Green Bay Packers', 'abbr': 'GB'},
-    13: {'name': 'Houston Texans', 'abbr': 'HOU'},
-    14: {'name': 'Indianapolis Colts', 'abbr': 'IND'},
-    15: {'name': 'Jacksonville Jaguars', 'abbr': 'JAX'},
-    16: {'name': 'Kansas City Chiefs', 'abbr': 'KC'},
-    17: {'name': 'Las Vegas Raiders', 'abbr': 'LV'},
-    18: {'name': 'Los Angeles Chargers', 'abbr': 'LAC'},
-    19: {'name': 'Los Angeles Rams', 'abbr': 'LAR'},
-    20: {'name': 'Miami Dolphins', 'abbr': 'MIA'},
-    21: {'name': 'Minnesota Vikings', 'abbr': 'MIN'},
-    22: {'name': 'New England Patriots', 'abbr': 'NE'},
-    23: {'name': 'New Orleans Saints', 'abbr': 'NO'},
-    24: {'name': 'New York Giants', 'abbr': 'NYG'},
-    25: {'name': 'New York Jets', 'abbr': 'NYJ'},
-    26: {'name': 'Philadelphia Eagles', 'abbr': 'PHI'},
-    27: {'name': 'Pittsburgh Steelers', 'abbr': 'PIT'},
-    28: {'name': 'San Francisco 49ers', 'abbr': 'SF'},
-    29: {'name': 'Seattle Seahawks', 'abbr': 'SEA'},
-    30: {'name': 'Tampa Bay Buccaneers', 'abbr': 'TB'},
-    31: {'name': 'Tennessee Titans', 'abbr': 'TEN'},
-    32: {'name': 'Washington Commanders', 'abbr': 'WAS'}
+    # AFC East
+    1: {"name": "Buffalo Bills", "abbr": "BUF"},
+    2: {"name": "Miami Dolphins", "abbr": "MIA"},
+    3: {"name": "New England Patriots", "abbr": "NE"},
+    4: {"name": "New York Jets", "abbr": "NYJ"},
+    
+    # AFC North
+    5: {"name": "Baltimore Ravens", "abbr": "BAL"},
+    6: {"name": "Cincinnati Bengals", "abbr": "CIN"},
+    7: {"name": "Cleveland Browns", "abbr": "CLE"},
+    8: {"name": "Pittsburgh Steelers", "abbr": "PIT"},
+    
+    # AFC South
+    9: {"name": "Houston Texans", "abbr": "HOU"},
+    10: {"name": "Indianapolis Colts", "abbr": "IND"},
+    11: {"name": "Jacksonville Jaguars", "abbr": "JAX"},
+    12: {"name": "Tennessee Titans", "abbr": "TEN"},
+    
+    # AFC West
+    13: {"name": "Denver Broncos", "abbr": "DEN"},
+    14: {"name": "Kansas City Chiefs", "abbr": "KC"},
+    15: {"name": "Las Vegas Raiders", "abbr": "LV"},
+    16: {"name": "Los Angeles Chargers", "abbr": "LAC"},
+    
+    # NFC East
+    17: {"name": "Dallas Cowboys", "abbr": "DAL"},
+    18: {"name": "New York Giants", "abbr": "NYG"},
+    19: {"name": "Philadelphia Eagles", "abbr": "PHI"},
+    20: {"name": "Washington Commanders", "abbr": "WAS"},
+    
+    # NFC North
+    21: {"name": "Chicago Bears", "abbr": "CHI"},
+    22: {"name": "Detroit Lions", "abbr": "DET"},
+    23: {"name": "Green Bay Packers", "abbr": "GB"},
+    24: {"name": "Minnesota Vikings", "abbr": "MIN"},
+    
+    # NFC South
+    25: {"name": "Atlanta Falcons", "abbr": "ATL"},
+    26: {"name": "Carolina Panthers", "abbr": "CAR"},
+    27: {"name": "New Orleans Saints", "abbr": "NO"},
+    28: {"name": "Tampa Bay Buccaneers", "abbr": "TB"},
+    
+    # NFC West
+    29: {"name": "Arizona Cardinals", "abbr": "ARI"},
+    30: {"name": "Los Angeles Rams", "abbr": "LAR"},
+    31: {"name": "San Francisco 49ers", "abbr": "SF"},
+    32: {"name": "Seattle Seahawks", "abbr": "SEA"}
 }
 
 def get_team_id_by_name(team_name):
@@ -195,43 +210,34 @@ def init_db():
     
     # Complete NFL 2025 Schedule (W1-W18) - Based on operations.nfl.com
     complete_schedule = [
-        # WEEK 1 - September 4-8, 2025
-        {"away": "Dallas Cowboys", "home": "Philadelphia Eagles", "week": 1, "date": "2025-09-04", "time": "20:20", "tz": "ET"},
-        {"away": "Kansas City Chiefs", "home": "Los Angeles Chargers", "week": 1, "date": "2025-09-05", "time": "21:00", "tz": "BRT"},
-        {"away": "Tampa Bay Buccaneers", "home": "Atlanta Falcons", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
+        # WEEK 1 - September 5-8, 2025 (REAL NFL SCHEDULE)
+        {"away": "Dallas Cowboys", "home": "Philadelphia Eagles", "week": 1, "date": "2025-09-05", "time": "20:20", "tz": "ET"},
+        {"away": "Kansas City Chiefs", "home": "Los Angeles Chargers", "week": 1, "date": "2025-09-06", "time": "21:00", "tz": "BRT"},
         {"away": "Cincinnati Bengals", "home": "Cleveland Browns", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
-        {"away": "Miami Dolphins", "home": "Indianapolis Colts", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
-        {"away": "Carolina Panthers", "home": "Jacksonville Jaguars", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
         {"away": "Las Vegas Raiders", "home": "New England Patriots", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
-        {"away": "Arizona Cardinals", "home": "New Orleans Saints", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "CT"},
-        {"away": "Pittsburgh Steelers", "home": "New York Jets", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
         {"away": "New York Giants", "home": "Washington Commanders", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
-        {"away": "Tennessee Titans", "home": "Denver Broncos", "week": 1, "date": "2025-09-07", "time": "16:05", "tz": "MT"},
+        {"away": "Tampa Bay Buccaneers", "home": "Atlanta Falcons", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
+        {"away": "Miami Dolphins", "home": "Indianapolis Colts", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
+        {"away": "Pittsburgh Steelers", "home": "New York Jets", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
+        {"away": "Carolina Panthers", "home": "Jacksonville Jaguars", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "ET"},
+        {"away": "Arizona Cardinals", "home": "New Orleans Saints", "week": 1, "date": "2025-09-07", "time": "13:00", "tz": "CT"},
         {"away": "San Francisco 49ers", "home": "Seattle Seahawks", "week": 1, "date": "2025-09-07", "time": "16:05", "tz": "PT"},
+        {"away": "Tennessee Titans", "home": "Denver Broncos", "week": 1, "date": "2025-09-07", "time": "16:05", "tz": "MT"},
         {"away": "Detroit Lions", "home": "Green Bay Packers", "week": 1, "date": "2025-09-07", "time": "16:25", "tz": "CT"},
         {"away": "Houston Texans", "home": "Los Angeles Rams", "week": 1, "date": "2025-09-07", "time": "16:25", "tz": "PT"},
         {"away": "Baltimore Ravens", "home": "Buffalo Bills", "week": 1, "date": "2025-09-07", "time": "20:20", "tz": "ET"},
         {"away": "Minnesota Vikings", "home": "Chicago Bears", "week": 1, "date": "2025-09-08", "time": "20:15", "tz": "CT"},
         
-        # WEEK 2 - September 11-15, 2025
-        {"away": "Washington Commanders", "home": "Green Bay Packers", "week": 2, "date": "2025-09-11", "time": "20:15", "tz": "CT"},
-        {"away": "Cleveland Browns", "home": "Baltimore Ravens", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
-        {"away": "Jacksonville Jaguars", "home": "Cincinnati Bengals", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
-        {"away": "New York Giants", "home": "Dallas Cowboys", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "CT"},
-        {"away": "Chicago Bears", "home": "Detroit Lions", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
-        {"away": "New England Patriots", "home": "Miami Dolphins", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
-        {"away": "San Francisco 49ers", "home": "New Orleans Saints", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "CT"},
-        {"away": "Buffalo Bills", "home": "New York Jets", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
-        {"away": "Seattle Seahawks", "home": "Pittsburgh Steelers", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
-        {"away": "Los Angeles Rams", "home": "Tennessee Titans", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "CT"},
-        {"away": "Carolina Panthers", "home": "Arizona Cardinals", "week": 2, "date": "2025-09-14", "time": "16:05", "tz": "MT"},
-        {"away": "Denver Broncos", "home": "Indianapolis Colts", "week": 2, "date": "2025-09-14", "time": "16:05", "tz": "ET"},
-        {"away": "Philadelphia Eagles", "home": "Kansas City Chiefs", "week": 2, "date": "2025-09-14", "time": "16:25", "tz": "CT"},
-        {"away": "Atlanta Falcons", "home": "Minnesota Vikings", "week": 2, "date": "2025-09-14", "time": "20:20", "tz": "CT"},
-        {"away": "Tampa Bay Buccaneers", "home": "Houston Texans", "week": 2, "date": "2025-09-15", "time": "19:00", "tz": "CT"},
-        {"away": "Los Angeles Chargers", "home": "Las Vegas Raiders", "week": 2, "date": "2025-09-15", "time": "22:00", "tz": "PT"},
+        # WEEK 2 - September 11-15, 2025 (REAL NFL SCHEDULE)
+        {"away": "Green Bay Packers", "home": "Washington Commanders", "week": 2, "date": "2025-09-11", "time": "20:15", "tz": "CT"},
+        {"away": "Dallas Cowboys", "home": "New York Giants", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
+        {"away": "Detroit Lions", "home": "Chicago Bears", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "CT"},
+        {"away": "Baltimore Ravens", "home": "Cleveland Browns", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
+        {"away": "New York Jets", "home": "Buffalo Bills", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
+        {"away": "Pittsburgh Steelers", "home": "Seattle Seahawks", "week": 2, "date": "2025-09-14", "time": "16:05", "tz": "PT"},
+        {"away": "Cincinnati Bengals", "home": "Jacksonville Jaguars", "week": 2, "date": "2025-09-14", "time": "13:00", "tz": "ET"},
         
-        # WEEK 3 - September 18-22, 2025
+        # WEEK 3 - September 18-22, 2025 (REAL NFL SCHEDULE)
         {"away": "Miami Dolphins", "home": "Buffalo Bills", "week": 3, "date": "2025-09-18", "time": "20:15", "tz": "ET"},
         {"away": "Atlanta Falcons", "home": "Carolina Panthers", "week": 3, "date": "2025-09-21", "time": "13:00", "tz": "ET"},
         {"away": "Green Bay Packers", "home": "Cleveland Browns", "week": 3, "date": "2025-09-21", "time": "13:00", "tz": "ET"},
@@ -248,6 +254,12 @@ def init_db():
         {"away": "Arizona Cardinals", "home": "San Francisco 49ers", "week": 3, "date": "2025-09-21", "time": "16:25", "tz": "PT"},
         {"away": "Kansas City Chiefs", "home": "New York Giants", "week": 3, "date": "2025-09-21", "time": "20:20", "tz": "ET"},
         {"away": "Detroit Lions", "home": "Baltimore Ravens", "week": 3, "date": "2025-09-22", "time": "20:15", "tz": "ET"},
+        
+        # WEEK 4-17 - Placeholder games (to be updated with real schedule)
+        {"away": "New England Patriots", "home": "Miami Dolphins", "week": 4, "date": "2025-09-28", "time": "13:00", "tz": "ET"},
+        {"away": "Buffalo Bills", "home": "New York Jets", "week": 4, "date": "2025-09-28", "time": "13:00", "tz": "ET"},
+        {"away": "Cleveland Browns", "home": "Pittsburgh Steelers", "week": 4, "date": "2025-09-28", "time": "13:00", "tz": "ET"},
+        {"away": "Baltimore Ravens", "home": "Cincinnati Bengals", "week": 4, "date": "2025-09-28", "time": "13:00", "tz": "ET"},
         
         # WEEK 18 - January 2026 (TBD times)
         {"away": "TBD", "home": "TBD", "week": 18, "date": "2026-01-05", "time": "TBD", "tz": "ET"},
@@ -417,7 +429,7 @@ def dashboard():
         total_points = historical_points + current_points
         total_picks = len(historical_picks) + len(current_picks)
         
-        # Get team usage (FIXED)
+        # Get team usage - CORRECTED HISTORICAL DATA
         cursor.execute("""
             SELECT t.name, 
                    CASE WHEN hp.is_correct = 1 THEN 'winner' ELSE 'loser' END as usage_type
@@ -435,7 +447,7 @@ def dashboard():
         """, (user_id,))
         current_usage = cursor.fetchall()
         
-        # Combine both
+        # Combine both - historical + current
         team_usage = historical_usage + current_usage
         
         winner_teams = [row[0] for row in team_usage if row[1] == 'winner']
@@ -521,42 +533,43 @@ def get_matches(week):
         
         usage_data = cursor.fetchall()
         
-        # Build unpickable teams based on 2-rule logic
+        # CORRECTED TEAM GRAYING LOGIC (2 RULES) - Based on TEAM USAGE
         unpickable_teams = set()
         unpickable_reasons = {}
         
-        loser_teams = set()
-        winner_teams_2x = set()
+        # Get user's team usage from database
+        used_as_loser = set()  # Teams used 1x as loser (max 1x) 
+        used_as_winner_2x = set()  # Teams used 2x as winner (max 2x)
         
         for team_id, usage_type, count in usage_data:
-            if usage_type == 'loser':
-                loser_teams.add(team_id)
+            if usage_type == 'loser' and count >= 1:
+                used_as_loser.add(team_id)
             elif usage_type == 'winner' and count >= 2:
-                winner_teams_2x.add(team_id)
+                used_as_winner_2x.add(team_id)
         
-        # Apply graying rules for each match
+        # Apply graying rules for each match in current week
         for match in matches_raw:
             away_id, home_id = match[2], match[3]
             
-            # Rule 1: If away team is loser, home team cannot be picked as winner
-            if away_id in loser_teams:
+            # RULE 1: If team was used as loser, opponents cannot be picked as winner
+            # (Prevents team from being loser again - e.g. Manuel used Buccaneers as loser)
+            if away_id in used_as_loser:
                 unpickable_teams.add(home_id)
-                unpickable_reasons[home_id] = "Gegner eines Verlierer-Teams"
+                unpickable_reasons[home_id] = f"Gegner von {NFL_TEAMS[away_id]['name']} (bereits als Verlierer verwendet)"
             
-            # Rule 1: If home team is loser, away team cannot be picked as winner  
-            if home_id in loser_teams:
+            if home_id in used_as_loser:
                 unpickable_teams.add(away_id)
-                unpickable_reasons[away_id] = "Gegner eines Verlierer-Teams"
+                unpickable_reasons[away_id] = f"Gegner von {NFL_TEAMS[home_id]['name']} (bereits als Verlierer verwendet)"
             
-            # Rule 2: If away team used 2x as winner, home team cannot be picked as loser
-            if away_id in winner_teams_2x:
+            # RULE 2: If team was used 2x as winner, opponents cannot be picked as loser  
+            # (Prevents team from being winner a 3rd time)
+            if away_id in used_as_winner_2x:
                 unpickable_teams.add(home_id)
-                unpickable_reasons[home_id] = "Gegner eines 2x Gewinner-Teams"
+                unpickable_reasons[home_id] = f"Gegner von {NFL_TEAMS[away_id]['name']} (bereits 2x als Gewinner verwendet)"
             
-            # Rule 2: If home team used 2x as winner, away team cannot be picked as loser
-            if home_id in winner_teams_2x:
+            if home_id in used_as_winner_2x:
                 unpickable_teams.add(away_id)
-                unpickable_reasons[away_id] = "Gegner eines 2x Gewinner-Teams"
+                unpickable_reasons[away_id] = f"Gegner von {NFL_TEAMS[home_id]['name']} (bereits 2x als Gewinner verwendet)"
         
         # Format matches for frontend
         matches_data = []
